@@ -31,7 +31,7 @@ namespace Travel.WebApi
         {
             // services.AddDbContext<TravelDbContext>(options => options.UseSqlite("DataSource=TravelTouDatabase.sqlite3"));
             services.AddDbContext<TravelDbContext>(options => options.UseNpgsql(
-                "Host=localhost;Username=postgres;Password=postgres;Database=dotnet"
+                "Host=localhost;Username=postgres;Password=postgres;Database=dotnetDB"
             ));
             services.AddControllers();
             services.AddSwaggerGen(c =>
