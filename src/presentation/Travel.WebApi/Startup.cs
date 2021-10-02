@@ -29,8 +29,10 @@ namespace Travel.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TravelDbContext>(options => options.UseSqlite("DataSource=TravelTouDatabase.sqlite3"));
-            // services.AddDbContext<TravelDbContext>(options => options.UseNpgsql("Host=localhost;Username=postgres;Password=s$cret;Database=testdb"));
+            // services.AddDbContext<TravelDbContext>(options => options.UseSqlite("DataSource=TravelTouDatabase.sqlite3"));
+            services.AddDbContext<TravelDbContext>(options => options.UseNpgsql(
+                "Host=localhost;Username=postgres;Password=postgres;Database=dotnet"
+            ));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
